@@ -1,0 +1,1 @@
+export const ERROR_CLOSE = "FirebaseError: Firebase: Error (auth/popup-closed-by-user)."
