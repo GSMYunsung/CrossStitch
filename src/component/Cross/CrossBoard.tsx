@@ -6,7 +6,7 @@ import Paper from '@mui/material/Paper';
 import { Box, Grid } from '@mui/material';
 import Sketch from '../ColorPicker/ColorPicker';
 
-export default function CrossBoard(){
+export default function CrossBoard({isColorPicker} : any ){
     const navigate = useNavigate();
 
     const initialGridState = Array.from({ length: 20 }, () =>
@@ -14,7 +14,7 @@ export default function CrossBoard(){
     );
 
     const [clicked, setClicked] = React.useState(initialGridState);
-    const [color , setColor] = React.useState('#d0021b');
+    const [color , setColor] = React.useState('#30A14E');
 
     const handleClick = (x : any, y : any) => {
         // 클릭된 아이템의 상태 업데이트
@@ -45,8 +45,7 @@ export default function CrossBoard(){
       }));
 
     return (
-        <div>
-        <h1>십자수</h1>
+        <div style={{display : 'flex' , flexDirection : 'row'}}>
         <Box>
           {Array.from(Array(20)).map((_, x) => (
             <Grid container>
@@ -59,10 +58,16 @@ export default function CrossBoard(){
             </Grid>
           ))}
         </Box>
+        
+        <div style={{display : isColorPicker ? "flex" : "none"}}>
 
-        <Sketch color={"#d0021b"} onChange={function (color: string): void {
-          setColor(color);
-        } }/>
+          <Sketch color={"#30A14E"} onChange={function (color: string): void {
+            setColor(color);
+          } }/>
+
+        </div>
+
+       
       </div>
     
     );
