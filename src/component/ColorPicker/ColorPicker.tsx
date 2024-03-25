@@ -14,9 +14,8 @@ export default function ColorPicker({color = "#d0021b" , onChange} : ColorPicker
 
   const [hex, setHex] = useState(color);
   return (
-    <div>
+    <div style={{ display : "flex" , marginLeft : "20px" ,  justifyContent : "center", alignItems: "center"}}>
        <Sketch
-        style={{ marginLeft: 20 }}
         color={hex}
         onChange={(color) => {
           setHex(color.hex);
