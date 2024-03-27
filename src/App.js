@@ -10,7 +10,9 @@ function App() {
     <div className='App'>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CrossBoard />}></Route>
+        <Route path="/Main" element={<MainScreen />}></Route>
+        <Route path="/" element={< GithubLogin/>}></Route>
+        <Route path="/CrossBord" element={<CrossBoard />}></Route>
       </Routes>
     </BrowserRouter>
   </div>
